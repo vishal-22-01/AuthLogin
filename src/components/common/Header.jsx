@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserImage from "../../assets/Images/user.png";
 
-const Home = () => {
+const Header = () => {
   const handleLogOut = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -13,17 +13,14 @@ const Home = () => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  //   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
-  //   const handlenavigateLogin = () => {
-  //     navigate("/login");
-  //   };
+
   const navigateTicket = () => {
     navigate("/ticket/listing");
   };
   return (
     <>
-      <div className="flex justify-between items-start p-7">
-        <h1 className="text-2xl">Home Page</h1>
+      <div className="flex justify-between items-start px-7 mb-6">
+        <h1 className="text-2xl p-3">Trendex</h1>
         <div className="flex items-center gap-4">
           <div className="dropdown  flex flex-col items-center p-3 gap-3.5 w-44">
             <img className="w-8" src={UserImage} onClick={toggleDropdown} />
@@ -47,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Header;
